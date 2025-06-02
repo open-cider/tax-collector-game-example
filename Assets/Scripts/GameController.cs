@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 
     private bool _isGameOver = false;
 
-    private static string _url  = "https://api.opencider.com/v1/user/query/summary-data";
+    private static string _url   = "https://api.opencider.com/v1/user/summary-data";
     private static string _token = "SERVICE_USER_TOKEN";
 
     
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
         public float metric2;
         public int metric3;
         public float metric4;
+        public bool incrBy;
     }
 
     [Serializable]
@@ -54,6 +55,7 @@ public class GameController : MonoBehaviour
         request.metric2 = 0;
         request.metric3 = 0;
         request.metric4 = 0;
+        request.incrBy  = false;
 
         var json = JsonUtility.ToJson(request);
 
